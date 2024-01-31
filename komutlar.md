@@ -22,4 +22,6 @@ break *adres
 info break
 # Çalıştırmaya devam et
 c
+# GDB intel syntax geçme
+set disassembly-flavor intel
 
