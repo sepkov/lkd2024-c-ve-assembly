@@ -10,7 +10,16 @@ info registers esp
 x/20x $esp  
 # _start'ta dur
 break _start
-# Bir adım ilerle
+# Bir adım ilerle içeri girmeden
 ni
+# Bir adım ilerle içeri girerek
+si
 # Kod çıktısını görme
 disas _start
+# Adreste dur
+break *adres
+# Breakpointleri görme
+info break
+# Çalıştırmaya devam et
+c
+
