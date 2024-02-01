@@ -2,29 +2,27 @@
 // gcc struct.c -o struct
 
 struct Oyuncu {
+	char isim[32];
 	int x;
 	int y;
 	char can;
+	long para;
 };
 
-char hasar_ver(char health, char miktar) {
-	health = health - miktar;
-	return health;
+void hasar_ver(struct Oyuncu *hasar_alan_oyuncu, char miktar) {
+	hasar_alan_oyuncu->can -= miktar;
 }
+
 int main() {
-	int x,y;
-	char health_oyuncu_1;
-	char health_oyuncu_2;
-	health_oyuncu_1 = 100;
-	health_oyuncu_2 = 100;
+	int abc = 5;
+	printf("Abc degeri: %d\n",abc);
+	printf("Abc konumu :%p\n",&abc);
 
-	printf("1 Can Degeri once: %d\n",health_oyuncu_1);
-	health_oyuncu_1 = hasar_ver(health_oyuncu_1, 20);
-	printf("1 Can Degeri sonra: %d\n",health_oyuncu_1);
-
-	printf("2 Can Degeri once: %d\n",health_oyuncu_2);
-	health_oyuncu_2 = hasar_ver(health_oyuncu_2, 30);
-	printf("2 Can Degeri sonra: %d\n",health_oyuncu_2);
-
+	printf("Oyuncu boyutu: %ld\n", sizeof(struct Oyuncu));
+	struct Oyuncu oyuncu1;
+	oyuncu1.can = 100;
+	printf("1 Can Degeri once: %d\n",oyuncu1.can);
+	hasar_ver(&oyuncu1, 20);
+	printf("1 Can Degeri sonra: %d\n",oyuncu1.can);
 }
 
