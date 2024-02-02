@@ -2,6 +2,10 @@
 nasm -f elf32 -o add.o add.S
 # Linkleyip çalıştırmaya hazır
 ld -m elf_i386 -o add add.o
+# C dosyasını derleme
+gcc kod.c -o kod
+# Derlenen dosyayı çalıştırma
+./kod
 # GDB
 gdb stack   
 # registeri görme
